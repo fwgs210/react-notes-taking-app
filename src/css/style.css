@@ -1,0 +1,96 @@
+.block {
+	padding: 10px 20px;
+    background: #fff;
+    box-shadow: 0 3px 7px 0 rgba(0,0,0,.12);
+    box-sizing: border-box;
+    margin: 20px 0
+}
+input, textarea {
+ 	width: 100%;
+    border: 1px solid #bbb;
+    min-height: 30px;
+    padding: 8px 12px;
+}
+.text-center {
+	text-align: center;
+}
+.login-page {
+	position: relative;
+    height: 100vh;
+}
+.login-block {
+	margin: 0;
+	width: 100%;
+	max-width: 320px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.buttonGroup {
+	margin: 20px 0 10px;
+}
+.button {
+	cursor: pointer;
+    display: inline-block;
+    min-height: 1em;
+    outline: none;
+    border: none;
+    vertical-align: baseline;
+    background: #fafafa linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.09));
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0em 0.5em 0em 0em;
+    padding: 0.8em 1.5em 0.8em;
+    text-transform: none;
+    text-shadow: none;
+    font-weight: bold;
+    line-height: 1em;
+    font-style: normal;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.28571429rem;
+    box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset, 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+    user-select: none;
+    transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+    will-change: '';
+    -webkit-tap-highlight-color: transparent;
+}
+.button:hover {
+    background-color: #cacbcd;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.13));
+    -webkit-box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset;
+    box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset;
+    color: rgba(0, 0, 0, 0.8);
+}
+.button:focus {
+    background-color: #cacbcd;
+    color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 1px rgba(81, 167, 232, 0.8) inset, 0px 0px 3px 2px rgba(81, 167, 232, 0.8) !important;
+}
+.button:active {
+    background-color: #f1f1f1;
+    background-image: '';
+    color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1) inset, 0px 1px 4px 0px rgba(0, 0, 0, 0.1) inset !important;
+}
+.primary.button {
+    background-color: #2185d0;
+    color: #ffffff;
+    text-shadow: none;
+    background-image: none;
+}
+.primary:hover {
+    background-color: #1678c2;
+    color: #ffffff;
+    text-shadow: none;
+}
+.primary.button:focus {
+    background-color: #0d71bb;
+    color: #ffffff;
+    text-shadow: none;
+}
+.primary.button:active {
+    background-color: #1a69a4;
+    color: #ffffff;
+    text-shadow: none;
+}
