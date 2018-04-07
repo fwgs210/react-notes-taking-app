@@ -1,11 +1,31 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 class Login extends Component {
 
-  static contextTypes = {
-    router: PropTypes.object.isRequired
-  }
+  constructor() {
+        super();
+        this.state = {
+          username: '',
+          password: ''
+        }
+  }  
+
+  // static contextTypes = {
+  //   router: PropTypes.object.isRequired
+  // }
+
+
+  // findUser = (user, password, data) => {
+  //   for (var i = 0; i <= data.length; i++) {
+  //     if (user === data[i].username && password === data[i].password) {
+  //       this.props.setUser(data[i])
+  //     } else {
+  //       alert('Please enter the correct username and password')
+  //     }
+  //   }
+  // }
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -13,12 +33,39 @@ class Login extends Component {
     const username = this.state.username
     const password = this.state.password
 
-    if (username === this.state.user.username && password === this.state.user.password) {
-      const userID = this.state.user._id
-      this.context.router.history.push(`/dashboard/${userID}`)
-    } else {
-      alert('wrong password')
-    }
+    const users = [
+        {
+                firstName: 'Jasme',
+                lastName: 'Smith',
+                email: 'asdsada@asdasd.com',
+                username: 'test',
+                password: 'test1234',
+                _id: '5a9f439eb957302ff4229ada',
+                notes: ['dsfdsfds']
+        },
+        {
+                firstName: 'test 1',
+                lastName: 'test 2',
+                email: 'test1@test.com',
+                username: 'test1',
+                password: 'test1234',
+                _id: '5a9f439eb957302ff4229ada'
+        }
+    ]
+
+
+    // axios.post('/login', {username, password})
+
+    // this.findUser(username, password, users)
+    this.props.setUser({
+                firstName: 'Jasme',
+                lastName: 'Smith',
+                email: 'asdsada@asdasd.com',
+                username: 'test',
+                password: 'test1234',
+                _id: '5a9f439eb957302ff4229ada',
+                
+        })
 
   }
 
@@ -29,22 +76,6 @@ class Login extends Component {
     this.setState({
       [fieldName]: fieldValue
     })
-  }
-
-  constructor() {
-        super();
-        this.state = {
-          username: '',
-          password: '',
-          user: {
-            firstName: 'Jasme',
-            lastName: 'Smith',
-            email: 'asdsada@asdasd.com',
-            username: 'test',
-            password: 'test1234',
-            _id: '5a9f439eb957302ff4229ada'
-          }
-        }
   }
 
   render() {

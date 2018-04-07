@@ -40,15 +40,6 @@ class Dashboard extends Component {
         this.state = {
           subject: '',
           notes: '',
-          allNotes: [],
-          user: {
-            firstName: 'Jasme',
-            lastName: 'Smith',
-            email: 'asdsada@asdasd.com',
-            image: 'https://cdn3.iconfinder.com/data/icons/internet-and-web-4/78/internt_web_technology-13-256.png',
-            alt: 'Jasme Smith profile picture',
-            notes: []
-          }
         }
     }
 
@@ -62,7 +53,12 @@ class Dashboard extends Component {
         <section className="row">
           <div className="col-md-8">
             <div className="block"><h2>Test Notes</h2><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div>
-            <DisplayNotes allNotes={this.state.allNotes} />
+            
+              {this.props.user.notes ? (
+                <DisplayNotes allNotes={this.props.user.notes} />
+                ) : (
+                <div className="block"><h3>You don't have any notes yet</h3></div>
+                )}
             <div className="block">
               <form onSubmit={this.handleNotes}>
               <div>
@@ -86,7 +82,7 @@ class Dashboard extends Component {
             </div>
           </div>
           <div className="col-md-4">
-            <Profile user={this.state.user} />
+            <Profile user={this.props.user} />
           </div>
         </section>
       </div>
